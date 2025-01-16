@@ -273,13 +273,12 @@ function charCount(word, char) {
     return "Second parameter must be a single character";
   }
 
-  // Convert both inputs to lowercase for case-insensitive comparison
-  word = word.toLowerCase();
-  char = char.toLowerCase();
+  // word = word.toLowerCase(); // geht auch, aber würde das original überschreiben
+  // char = char.toLowerCase(); // geht auch, aber würde das original überschreiben
 
   // Iterate over the word
   for (let index = 0; index < word.length; index++) {
-    if (char === word[index]) {
+    if (char.toLowerCase() === word[index].toLowerCase()) {
       count = count + 1;
     }
   }
@@ -289,7 +288,7 @@ function charCount(word, char) {
 console.log(charCount("hello", "l"));
 // result should be: 2
 
-console.log(charCount("mama", "m"));
+console.log(charCount("mama", "M"));
 // result should be: 2
 
 console.log(charCount("Resümee", "e"));
